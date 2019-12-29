@@ -37,6 +37,8 @@ dependencies {
     final VERSION_RETROFIT_LIBRARY = "2.1.0"
     final VERSION_OKHTTP_LIBRARY = "3.5.0"
     final VERSION_BUTTERKNIFE = "8.8.1"
+    final VERSION_DAGGER_LIBRARY = "2.8"
+
 
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -63,5 +65,10 @@ dependencies {
     //butterknife for view injection
     implementation "com.jakewharton:butterknife:$VERSION_BUTTERKNIFE"
     annotationProcessor "com.jakewharton:butterknife-compiler:$VERSION_BUTTERKNIFE"
+
+    //dagger
+    implementation "com.google.dagger:dagger:$VERSION_DAGGER_LIBRARY"
+    annotationProcessor "com.google.dagger:dagger-compiler:$VERSION_DAGGER_LIBRARY"
+
 
 }
