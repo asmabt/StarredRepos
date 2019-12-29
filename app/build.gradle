@@ -10,10 +10,23 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    flavorDimensions "default"
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors{
+
+        stars{
+            applicationId "com.example.stars"
+            buildConfigField("String", "BASE_URL", "https://api.github.com/search/")
+            versionName "1.0"
+            resValue "string", "app_name", "starredRepos"
         }
     }
 }
