@@ -36,6 +36,8 @@ dependencies {
     final VERSION_SUPPORT_LIBRARY = "28.0.0"
     final VERSION_RETROFIT_LIBRARY = "2.1.0"
     final VERSION_OKHTTP_LIBRARY = "3.5.0"
+    final VERSION_BUTTERKNIFE = "8.8.1"
+
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
@@ -56,4 +58,10 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:$VERSION_SUPPORT_LIBRARY"
     implementation "com.android.support:design:$VERSION_SUPPORT_LIBRARY"
     implementation "com.android.support:support-v4:$VERSION_SUPPORT_LIBRARY"
+
+
+    //butterknife for view injection
+    implementation "com.jakewharton:butterknife:$VERSION_BUTTERKNIFE"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$VERSION_BUTTERKNIFE"
+
 }
