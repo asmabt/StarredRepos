@@ -3,6 +3,7 @@ package com.example.starredrepos.common.network;
 import com.example.starredrepos.BuildConfig;
 import com.example.starredrepos.home.StarredReposApp;
 import com.example.starredrepos.models.StarredReposRS;
+import com.example.starredrepos.models.requests.PaginationRQ;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.readystatesoftware.chuck.ChuckInterceptor;
@@ -58,8 +59,8 @@ public class ApiManager {
         return gson;
     }
 
-    public Call<StarredReposRS> getStarredReposRS(){
-        return this.apiInterface.getStarredReposRS();
+    public Call<StarredReposRS> getStarredReposRS(PaginationRQ request){
+        return this.apiInterface.getStarredReposRS(request.getPage());
     }
 
 }

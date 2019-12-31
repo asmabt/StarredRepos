@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.starredrepos.R;
 import com.example.starredrepos.models.Repos;
+import com.example.starredrepos.models.requests.PaginationRQ;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements homeView {
 
     private StarredReposAdapter starredReposAdapter;
 
+    private PaginationRQ paginationRQ = new PaginationRQ();
+
 
 
     @Override
@@ -42,9 +45,23 @@ public class MainActivity extends AppCompatActivity implements homeView {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         starredReposAdapter = new StarredReposAdapter(this, reposList);
         recyclerView.setAdapter(starredReposAdapter);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+           /*@Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+            }*/
 
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                if(dy>0){
+                    presenter.getStarredRepos(paginationRQ);
+                }
+            }
+        });
         presenter.bind(this);
-        presenter.getStarredRepos();
+        presenter.getStarredRepos(paginationRQ);
 
     }
 
@@ -57,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements homeView {
     public void getStarredReposList(List<Repos> starredReposList) {
         reposList.addAll(starredReposList);
         starredReposAdapter.setStarredReposList(reposList);
+        paginationRQ.setPage(paginationRQ.getPage()+1);
     }
 
     @Override

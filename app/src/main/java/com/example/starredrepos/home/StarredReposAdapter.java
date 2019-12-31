@@ -24,6 +24,7 @@ public class StarredReposAdapter extends RecyclerView.Adapter<StarredReposAdapte
     Context context ;
     List<Repos> repos;
 
+
     public StarredReposAdapter(Context context, List<Repos> repos) {
         this.context = context;
         this.repos = repos;

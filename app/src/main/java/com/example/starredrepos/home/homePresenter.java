@@ -4,6 +4,7 @@ import com.example.starredrepos.appBase.appBasePresenter;
 import com.example.starredrepos.common.network.ApiManager;
 import com.example.starredrepos.models.Repos;
 import com.example.starredrepos.models.StarredReposRS;
+import com.example.starredrepos.models.requests.PaginationRQ;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +21,10 @@ public class homePresenter extends appBasePresenter<homeView> {
     }
 
 
-    void getStarredRepos(){
-        ApiManager.getInstance().getStarredReposRS().enqueue(new Callback<StarredReposRS>() {
+    void getStarredRepos(PaginationRQ request){
+
+        request.setPage(request.getPage());
+        ApiManager.getInstance().getStarredReposRS(request).enqueue(new Callback<StarredReposRS>() {
             @Override
             public void onResponse(Call<StarredReposRS> call, Response<StarredReposRS> response) {
 
