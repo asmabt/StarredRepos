@@ -7,49 +7,25 @@ import com.google.gson.annotations.SerializedName;
 
 public class StarredReposRS{
 
-	@Expose
-	@SerializedName("total_count")
-	private int totalCount;
-
-	@Expose
-	@SerializedName("incomplete_results")
-	private boolean incompleteResults;
 
 	@Expose
 	@SerializedName("items")
-	private List<ItemsItem> items;
+	private List<Repos> repos;
 
-	public void setTotalCount(int totalCount){
-		this.totalCount = totalCount;
+
+	public void setItems(List<Repos> repos){
+		this.repos = repos;
 	}
 
-	public int getTotalCount(){
-		return totalCount;
-	}
-
-	public void setIncompleteResults(boolean incompleteResults){
-		this.incompleteResults = incompleteResults;
-	}
-
-	public boolean isIncompleteResults(){
-		return incompleteResults;
-	}
-
-	public void setItems(List<ItemsItem> items){
-		this.items = items;
-	}
-
-	public List<ItemsItem> getItems(){
-		return items;
+	public List<Repos> getItems(){
+		return repos;
 	}
 
 	@Override
  	public String toString(){
 		return 
-			"StarredReposRS{" + 
-			"total_count = '" + totalCount + '\'' + 
-			",incomplete_results = '" + incompleteResults + '\'' + 
-			",items = '" + items + '\'' + 
+			"StarredReposRS{" + '\'' +
+			",items = '" + repos + '\'' +
 			"}";
 		}
 }
