@@ -74,4 +74,7 @@ dependencies {
     debugImplementation 'com.readystatesoftware.chuck:library:1.1.0'
     releaseImplementation 'com.readystatesoftware.chuck:library-no-op:1.1.0'
 
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
 }
