@@ -7,7 +7,7 @@ Technologies used :
 - Retrofit: is type-safe REST client for Android and Java which aims to make it easier to consume RESTful web services.
 
 How to run the app In order to test this app :
-- Clone the repository : https://github.com/asmabt/PokedexApp.git
+- Clone the repository : https://github.com/asmabt/StarredRepos.git.git
 - install android studio and open the project with it.
 
 Finally you can run the app in android studio and install it to your smartphone and test it out !
